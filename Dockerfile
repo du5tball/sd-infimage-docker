@@ -1,6 +1,6 @@
-FROM alpine
+FROM python:3.11-alpine
 
-RUN apk add python3 py3-pip git pkgconfig ffmpeg-dev gcc python3-dev libc-dev
+RUN apk add git pkgconfig ffmpeg-dev gcc libc-dev
 
 RUN git clone https://github.com/zanllp/sd-webui-infinite-image-browsing.git /infimage
 WORKDIR /infimage
