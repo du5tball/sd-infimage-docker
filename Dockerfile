@@ -14,4 +14,7 @@ COPY entry.sh /usr/local/sbin/
 COPY config.json /
 RUN sed -i s_/root_/outputs_ /etc/passwd
 
+ENV IIB_CACHE_DIR=/infimage/cache
+VOLUME /infimage/cache /infimage/iib_db_backup
+
 ENTRYPOINT [ "sh", "-c", "/usr/local/sbin/entry.sh" ]
