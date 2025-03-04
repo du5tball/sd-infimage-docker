@@ -4,7 +4,6 @@ RUN apt-get update && apt-get -y install git python3-pkgconfig python3-av gcc li
 
 RUN git clone https://github.com/zanllp/sd-webui-infinite-image-browsing.git /infimage
 WORKDIR /infimage
-RUN git -c advice.detachedHead=false checkout $(git tag --sort=v:refname|tail -n1)
 
 RUN python -m venv /infimage/venv
 RUN /infimage/venv/bin/pip install --upgrade pip
